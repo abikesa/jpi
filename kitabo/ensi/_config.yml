@@ -5,7 +5,7 @@
 ####################################################################################### https://www.ledr.com/colours/white.jpg
 
 # Book settings
-title                       : Blind # The title of the book. Will be placed in the left navbar.
+title                       : JPI # The title of the book. Will be placed in the left navbar.
 author                      :  # The author of the book
 copyright                   : "2025"  # Copyright year to be placed in the footer
 logo                        : figures/ukubona-002.jpeg # Path to the logo image file
