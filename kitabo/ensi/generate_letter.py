@@ -1,6 +1,7 @@
 from fpdf import FPDF
 from datetime import datetime
 import os
+import qrcode
 
 # ========== Configuration ==========
 FONT_DIR = "fonts"
@@ -49,40 +50,20 @@ class PDF(FPDF):
         self.multi_cell(0, 7, body)
         self.ln(2)
 
+    def indented_block(self, text, indent=10):
+        self.set_font("DejaVu", "", 10)
+        self.set_text_color(50, 50, 50)
+        self.set_x(self.get_x() + indent)
+        self.multi_cell(0, 6, text)
+        self.ln(1)
+        self.set_x(self.l_margin)  # Reset x
+
     def add_hyperlink(self, label, url):
         self.set_text_color(0, 102, 204)
         self.set_font("DejaVu", "U", 11)
         self.cell(0, 10, label, ln=True, link=url)
         self.set_text_color(30, 30, 30)
         self.set_font("DejaVu", "", 11)
-
-# ========== Body Content ==========
-letter_body = """
-Dear Doreen,
-
-Thanks for reaching out about Jonathan's interest in sports analytics. I believe we can put together a rich and meaningful remote internship experience through a program I’ve been developing called PAIRS@JH. It stands for Python, AI, R, Stata, JavaScript (or JupyterBook), and HTML. Originally inspired by my work at Johns Hopkins, the framework is designed to be generalizable and adaptable to students' interests and aptitudes.
-
-Yes—Jonathan could absolutely benefit from this. And yes—it would almost certainly fulfill the school's internship or job-shadowing requirement, provided he completes a tangible deliverable. Many schools just want to see that the student engaged with a mentor, practiced applied skills, and produced something concrete (e.g., a report, a dashboard, a code project, or a statistical summary).
-
-Here’s how a one-week remote internship might be structured:
-
-    Day 1–2: Orientation + Dataset exploration (scraping stats from Pro Football Reference or Baseball Savant)        
-    Day 3–4: Apply a basic model (e.g., logistic regression for win prediction, or clustering player profiles)      
-    Day 5: Present insights in a Jupyter notebook or lightweight slide deck (e.g. wikipage with interactive visualizations)          
-
-This sprint-style format can be supplemented with daily check-ins, quick code reviews, and discussions on how data is used in sports and analytics careers. Jonathan would leave with a portfolio-ready artifact and a much stronger sense of real-world applications.
-
-I’d be happy to serve as his mentor during that week. We can also frame the experience for the school as:  
-"Remote internship in sports analytics under data science supervision. Applied Python and R for statistical modeling and visualization."
-
-Let me know if you’d like to set up a time for Jonathan and me to chat. I’d be honored to help.
-
-Warmly,
-
-
-Abimereki Muzaale, MD, PhD  
-Founder & CEO, Ukubona LLC
-"""
 
 # ========== Generate PDF ==========
 if not os.path.exists(OUTPUT_DIR):
@@ -96,11 +77,37 @@ pdf.cell(0, 10, today, ln=True, align="R")
 pdf.ln(5)
 
 pdf.chapter_title("Letter of Internship Support for Jonathan")
-pdf.chapter_body(letter_body)
-pdf.ln(4)
-# pdf.add_hyperlink("Visit Ukubona LLC", "https://ukubona-llc.github.io/")
 
-import qrcode
+# Body before the indented block
+pdf.chapter_body("""Dear Doreen,
+
+Thanks for reaching out about Jonathan's interest in sports analytics. I believe we can put together a rich and meaningful remote internship experience through a program I’ve been developing called PAIRS@JH. It stands for Python, AI, R, Stata, JavaScript (or JupyterBook), and HTML. Originally inspired by my work at Johns Hopkins, the framework is designed to be generalizable and adaptable to students' interests and aptitudes.
+
+Yes—Jonathan could absolutely benefit from this. And yes—it would almost certainly fulfill the school's internship or job-shadowing requirement, provided he completes a tangible deliverable. Many schools just want to see that the student engaged with a mentor, practiced applied skills, and produced something concrete (e.g., a report, a dashboard, a code project, or a statistical summary).
+
+Here’s how a one-week remote internship might be structured:""")
+
+# ========== Indented Internship Outline ==========
+pdf.indented_block("""\
+Day 1–2: Orientation + Dataset exploration (scraping stats from Pro Football Reference or Baseball Savant)
+Day 3–4: Apply a basic model (e.g., logistic regression for win prediction, or clustering player profiles)
+Day 5: Present insights in a Jupyter notebook or lightweight slide deck (e.g. wikipage with interactive visualizations)
+""")
+
+# Resume the normal body
+pdf.chapter_body("""This sprint-style format can be supplemented with daily check-ins, quick code reviews, and discussions on how data is used in sports and analytics careers. Jonathan would leave with a portfolio-ready artifact and a much stronger sense of real-world applications.
+
+I’d be happy to serve as his mentor during that week. We can also frame the experience for the school as:
+"Remote internship in sports analytics under data science supervision. Applied Python and R for statistical modeling and visualization."
+
+Let me know if you’d like to set up a time for Jonathan and me to chat. I’d be honored to help.
+
+Warmly,
+
+
+Abimereki Muzaale, MD, PhD  
+Founder & CEO, Ukubona LLC
+""")
 
 # ========== QR Code Generation ==========
 qr_url = "https://ukubona-llc.github.io/"
@@ -122,7 +129,7 @@ pdf.set_font("DejaVu", "", 10)
 pdf.set_text_color(80, 80, 80)
 pdf.cell(0, 10, "Scan QR to visit Ukubona LLC:", ln=True)
 pdf.image(qr_img_path, x=pdf.get_x() + 5, y=pdf.get_y(), w=30)
-pdf.ln(35)  # Move cursor down to avoid overlap
+pdf.ln(35)
 
 pdf.output(OUTPUT_PDF)
 print(f"✅ PDF saved to {OUTPUT_PDF}")
