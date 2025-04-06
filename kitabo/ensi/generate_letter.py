@@ -10,7 +10,7 @@ OUTPUT_DIR = "pdfs"
 FONT_REGULAR = os.path.join(FONT_DIR, "DejaVuSans.ttf")
 FONT_BOLD = os.path.join(FONT_DIR, "DejaVuSans-Bold.ttf")
 LOGO = os.path.join(FIGURE_DIR, "ukubona.png")
-OUTPUT_PDF = os.path.join(OUTPUT_DIR, "jonathan.pdf")
+OUTPUT_PDF = os.path.join(OUTPUT_DIR, "jonathan-unsigned.pdf")
 
 # ========== PDF Class ==========
 class PDF(FPDF):
