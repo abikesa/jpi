@@ -90,7 +90,9 @@ Here’s how a one-week remote internship might be structured:""")
 # ========== Indented Internship Outline ==========
 pdf.indented_block("""\
 Day 1–2: Orientation + Dataset exploration (scraping stats from Pro Football Reference or Baseball Savant)
+
 Day 3–4: Apply a basic model (e.g., logistic regression for win prediction, or clustering player profiles)
+
 Day 5: Present insights in a Jupyter notebook or lightweight slide deck (e.g. wikipage with interactive visualizations)
 """)
 
