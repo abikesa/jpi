@@ -17,9 +17,10 @@ dirs=(
   xml
 )
 
-# Create directories under _build/html
+# Create directories and copy contents if any
 for d in "${dirs[@]}"; do
   mkdir -p "_build/html/$d"
-  cp -r "$d/"* "_build/html/$d/" 2>/dev/null
+  if [ -d "$d" ] && [ "$(ls -A "$d")" ]; then
+    cp -r "$d/"* "_build/html/$d/" 2>/dev/null
+  fi
 done
-
