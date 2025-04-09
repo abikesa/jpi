@@ -15,6 +15,17 @@ dirs=(
   stata
   bash
   xml
+  data
+  aperitivo
+  antipasto
+  primo
+  secondo
+  contorno
+  insalata
+  formaggio-e-frutta
+  dolce
+  caffe
+  digestivo
 )
 
 # Create directories under _build/html
