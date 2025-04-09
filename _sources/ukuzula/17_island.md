@@ -194,3 +194,52 @@ Layers:
 
 > *Ukubona is the eye. Ukuzimba is the hand. One sees, the other builds.*
 
+---
+
+### 🔱 The Five Layers of Epistemic Navigation
+
+[.](ukuzimba/01_intro.md)
+[.](ukuzimba/02_epistemology.md)
+[.](ukuzimba/03_platform.md)
+[.](ukuzimba/04_architecture.md)
+[.](ukuzimba/05_data_sources.md)
+[.](ukuzimba/06_modeling.md)
+[.](ukuzimba/07_kidney_tool.md)
+[.](ukuzimba/08_cancer_tool.md)
+[.](ukuzimba/09_clinical.md)
+[.](ukuzimba/10_education.md)
+[.](ukuzimba/11_compliance.md)
+[.](ukuzimba/12_contact.md)
+[.](ukuzimba/13_philosophy.md)
+[.](ukuzimba/14_ethics.md)
+[.](ukuzimba/15_symbols.md)
+[.](ukuzimba/16_github.md)
+[.](ukuzimba/17_island.md)
+
+**1. 🌊 Sea**  
+- *Raw truth. Chaos. Entropy.*  
+- No meaning. Just matter and motion[.](ukubona/ukubona.md)
+
+**2. 🚢 Ship**  
+- *Inherited filter. Belief system. Cultural vessel.*  
+- Often beautiful. Often leaking. Still necessary[.](pdfs/usaid-elon.pdf)
+
+**3. 🏴‍☠️ Pirate vs. 🪛 Tinker**  
+- *Challenge vs. Repair.*  
+- The Pirate attacks, deconstructs, exposes rot[.](ukubona/e-verify.md)  
+- The Tinker restores function, improvises survival, and remembers the point[.](ukubona/poetic-essay.md)  
+- **This is the moment of internal conflict or encounter with the Other.**
+
+**4. 🛟 Life Raft / ✂️ Scissors / 🦈 Shark**  
+- *The Identity Crucible.*  
+  - **🛟** = Temporary myth. You grab what floats[.](pdfs/ukubona_offer.pdf)  
+  - **✂️** = Optimization. Salience. You prune and reweight[.](pdfs/i983.pdf)  
+  - **🦈** = Collapse. Salience hijacked. You’re devoured by misdirected meaning.  
+- This is the **medial brain**, negotiating body/mind/soul.  
+
+**5. 🏝️ Island**  
+- *Constructed meaning.*  
+- Earned, not inherited.  
+- *It’s not the original truth—but it’s beautiful, and it's yours.*
+
+🪡🔥🛠️🏝️🪝⚓️ 
